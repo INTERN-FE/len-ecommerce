@@ -1,21 +1,21 @@
 version: "3"
 services:
   mf-ecommerce-host:
-    image: "xyzuan/mf-ecommerce-host:1.1"
+    image: "xyzuan/mf-ecommerce-host:latest"
     container_name: fe-ecommerce-host
     ports:
       - "4250:4250"
     networks:
       - nginx_default
   mf-list-product:
-    image: "xyzuan/mf-list-product:1.1"
+    image: "xyzuan/mf-list-product:latest"
     container_name: mf-list-product
     ports:
       - "4251:4251"
     networks:
       - nginx_default
   mf-payment-and-cart:
-    image: "xyzuan/mf-payment-and-cart:1.1"
+    image: "xyzuan/mf-payment-and-cart:latest"
     container_name: mf-payment-and-cart
     ports:
       - "4252:4252"
