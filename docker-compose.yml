@@ -5,16 +5,22 @@ services:
     container_name: fe-ecommerce-host
     ports:
       - "4250:4250"
+    networks:
+      - nginx_default
   mf-list-product:
     image: "xyzuan/mf-list-product:1.1"
     container_name: mf-list-product
     ports:
       - "4251:4251"
+    networks:
+      - nginx_default
   mf-payment-and-cart:
     image: "xyzuan/mf-payment-and-cart:1.1"
     container_name: mf-payment-and-cart
     ports:
       - "4252:4252"
+    networks:
+      - nginx_default
   db:
     image: "postgres:14.5-alpine"
     restart: always
@@ -26,3 +32,9 @@ services:
       - "41120:5432"
     volumes:
       - /home/xyzuan/work/len/ecommerce_db:/var/lib/postgresql/data
+    networks:
+      - nginx_default
+
+networks:
+  nginx_default:
+    external: true
