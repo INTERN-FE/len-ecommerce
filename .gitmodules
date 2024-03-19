@@ -1,3 +1,9 @@
 [submodule "mf-ecommerce-host"]
 	path = mf-ecommerce-host
 	url = https://github.com/INTERN-FE/mf-ecommerce-host
+[submodule "mf-payment-and-cart"]
+	path = mf-payment-and-cart
+	url = https://github.com/INTERN-FE/mf-payment-and-cart
+[submodule "mf-list-product"]
+	path = mf-list-product
+	url = https://github.com/INTERN-FE/mf-list-product
