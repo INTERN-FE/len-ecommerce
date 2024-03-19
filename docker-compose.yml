@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  # mfe1:
+  #   build:
+  #     context: ../packages/mfe1
+  #     dockerfile: Dockerfile
+  #   image: mfe1:1.1
+  #   container_name: mfe1_container
+  #   ports:
+  #     - 4001:80
+
+  # mfe2:
+  #   build:
+  #     context: ../packages/mfe2
+  #     dockerfile: Dockerfile
+  #   image: mfe2:1.1
+  #   container_name: mfe2_container
+  #   ports:
+  #     - 4002:80
+
+  ecommerce-host:
+    build:
+      context: ./mf-ecommerce-host
+      dockerfile: Dockerfile
+    image: node:21.7.1-alpine
+    container_name: mf-ecommerce-host
+    ports:
+      - 4000:8080
+    # depends_on:
+    # - mfe1
+    # - mfe2
