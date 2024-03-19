@@ -1,31 +1,23 @@
-version: "3.8"
+version: "3"
 services:
-  # mfe1:
-  #   build:
-  #     context: ../packages/mfe1
-  #     dockerfile: Dockerfile
-  #   image: mfe1:1.1
-  #   container_name: mfe1_container
-  #   ports:
-  #     - 4001:80
-
-  # mfe2:
-  #   build:
-  #     context: ../packages/mfe2
-  #     dockerfile: Dockerfile
-  #   image: mfe2:1.1
-  #   container_name: mfe2_container
-  #   ports:
-  #     - 4002:80
-
-  ecommerce-host:
-    build:
-      context: ./mf-ecommerce-host
-      dockerfile: Dockerfile
-    image: node:21.7.1-alpine
-    container_name: mf-ecommerce-host
+  mf-ecommerce-host:
+    image: "xyzuan/mf-ecommerce-host:1.0"
+    container_name: fe-ecommerce-host
     ports:
-      - 4000:8080
-    # depends_on:
-    # - mfe1
-    # - mfe2
+      - "4250:4250"
+  mf-list-product:
+    image: "xyzuan/mf-list-product:1.0"
+    container_name: mf-list-product
+    ports:
+      - "4251:4251"
+  db:
+    image: "postgres:14.5-alpine"
+    restart: always
+    container_name: ecommerce-db
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=ecommerce123
+    ports:
+      - "41120:5432"
+    volumes:
+      - /home/xyzuan/work/len/ecommerce_db:/var/lib/postgresql/data
