@@ -2,7 +2,7 @@ version: "3"
 services:
   mf-ecommerce-host:
     image: "xyzuan/mf-ecommerce-host:latest"
-    container_name: fe-ecommerce-host
+    container_name: mf-ecommerce-host
     ports:
       - "4250:4250"
     networks:
