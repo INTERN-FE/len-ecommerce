@@ -23,10 +23,11 @@ Visit this site [ecommerce.xyzuan.my.id](https://ecommerce.xyzuan.my.id/)
 
 ### Installation Steps
 
-1. Clone the repository and submodules
-2. Change desired env variable within `./build.sh & ./docker-compose.yml`
-3. Build the mf app to docker image locally: `./build.sh`
-4. Served in desired URL
+1. Clone the repository 
+2. Clone the submodule `git submodule update --init`
+3. Change desired env variable within `./build.sh & ./docker-compose.yml`
+4. Build the mf app to docker image locally: `./build.sh`
+5. Served in desired URL
 
 ## License
 
