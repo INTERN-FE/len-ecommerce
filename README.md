@@ -2,9 +2,8 @@
 
 ## Feature
 
-- Microfrontend Product List
-- Microfrontend Detail Product
-- Microfrontend Payment & Cart
+- Microfrontend Product List & Detail [MF List & Detail Product](mf-list-product.xyzuan.my.id/)
+- Microfrontend Payment & Cart [MF Payment & Cart](https://mf-cart-payment.xyzuan.my.id)
 
 ## Live Preview
 
