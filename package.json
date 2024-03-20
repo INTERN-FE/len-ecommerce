@@ -1,0 +1,24 @@
+{
+  "name": "ecommerce_fe",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Jody Yuantoro",
+    "email": "jodyyuan@xyzuan.my.id"
+  },
+  "scripts": {
+    "pkg:mf-ecommerce-host": "cd mf-ecommerce-host && yarn",
+    "pkg:mf-payment-and-cart": "cd mf-payment-and-cart && yarn",
+    "pkg:mf-list-product": "cd mf-list-product && yarn",
+    "start:mf-ecommerce-host": "cd mf-ecommerce-host && yarn run start",
+    "start:mf-payment-and-cart": "cd mf-payment-and-cart && yarn run start",
+    "start:mf-list-product": "cd mf-list-product && yarn run start",
+    "start": "concurrently \"yarn:start:mf-ecommerce-host\" \"yarn:start:mf-payment-and-cart\" \"yarn:start:mf-list-product\"",
+    "pkg": "concurrently \"yarn:pkg:mf-ecommerce-host\" \"yarn:pkg:mf-payment-and-cart\" \"yarn:pkg:mf-list-product\"",
+    "test": "jest --projects ./mf-ecommerce-host ./mf-list-product ./mf-payment-and-cart"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "jest": "^29.7.0"
+  }
+}
